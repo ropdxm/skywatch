@@ -1,1 +1,1 @@
-Dashboard for Recodetau
+Dashboard for Recodetau Hackathon
