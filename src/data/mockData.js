@@ -432,165 +432,141 @@ export const mockPieData = [
 
 export const mockLineData = [
   {
-    id: "japan",
+    id: "Воздух",
     color: tokens("dark").greenAccent[500],
     data: [
       {
-        x: "plane",
+        x: "1 апреля",
         y: 101,
       },
       {
-        x: "helicopter",
+        x: "3 апреля",
         y: 75,
       },
       {
-        x: "boat",
+        x: "5 апреля",
         y: 36,
       },
       {
-        x: "train",
+        x: "7 апреля",
         y: 216,
       },
       {
-        x: "subway",
+        x: "9 апреля",
         y: 35,
       },
       {
-        x: "bus",
+        x: "11 апреля",
         y: 236,
       },
       {
-        x: "car",
+        x: "13 апреля",
         y: 88,
       },
       {
-        x: "moto",
+        x: "15 апреля",
         y: 232,
       },
       {
-        x: "bicycle",
+        x: "17 апреля",
         y: 281,
       },
       {
-        x: "horse",
+        x: "19 апреля",
         y: 1,
-      },
-      {
-        x: "skateboard",
-        y: 35,
-      },
-      {
-        x: "others",
-        y: 14,
       },
     ],
   },
   {
-    id: "france",
+    id: "Листья",
     color: tokens("dark").blueAccent[300],
     data: [
       {
-        x: "plane",
+        x: "1 апреля",
         y: 212,
       },
       {
-        x: "helicopter",
+        x: "3 апреля",
         y: 190,
       },
       {
-        x: "boat",
+        x: "5 апреля",
         y: 270,
       },
       {
-        x: "train",
+        x: "7 апреля",
         y: 9,
       },
       {
-        x: "subway",
+        x: "9 апреля",
         y: 75,
       },
       {
-        x: "bus",
+        x: "11 апреля",
         y: 175,
       },
       {
-        x: "car",
+        x: "13 апреля",
         y: 33,
       },
       {
-        x: "moto",
+        x: "15 апреля",
         y: 189,
       },
       {
-        x: "bicycle",
+        x: "17 апреля",
         y: 97,
       },
       {
-        x: "horse",
+        x: "19 апреля",
         y: 87,
-      },
-      {
-        x: "skateboard",
-        y: 299,
-      },
-      {
-        x: "others",
-        y: 251,
       },
     ],
   },
   {
-    id: "us",
+    id: "Почва",
     color: tokens("dark").redAccent[200],
     data: [
       {
-        x: "plane",
+        x: "1 апреля",
         y: 191,
       },
       {
-        x: "helicopter",
+        x: "3 апреля",
         y: 136,
       },
       {
-        x: "boat",
+        x: "5 апреля",
         y: 91,
       },
       {
-        x: "train",
+        x: "7 апреля",
         y: 190,
       },
       {
-        x: "subway",
+        x: "9 апреля",
         y: 211,
       },
       {
-        x: "bus",
+        x: "11 апреля",
         y: 152,
       },
       {
-        x: "car",
+        x: "13 апреля",
         y: 189,
       },
       {
-        x: "moto",
+        x: "15 апреля",
         y: 152,
       },
       {
-        x: "bicycle",
+        x: "17 апреля",
         y: 8,
       },
       {
-        x: "horse",
+        x: "19 апреля",
         y: 197,
-      },
-      {
-        x: "skateboard",
-        y: 107,
-      },
-      {
-        x: "others",
-        y: 170,
-      },
+      }
     ],
   },
 ];
