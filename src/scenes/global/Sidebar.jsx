@@ -127,15 +127,6 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-
-            <Item  
-              title="Plant Disease detection"
-              to="/plantdisease"
-              icon={<HomeOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-
             {/* <Typography
               variant="h6"
               color={colors.grey[300]}
