@@ -16,7 +16,7 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import logo from '../../assets/logo.svg';
+import logo from "../../assets/logo.svg";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -41,7 +41,7 @@ const Sidebar = () => {
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
-  console.log(require("../../assets/logo.svg"))
+  console.log(require("../../assets/logo.svg"));
   return (
     <Box
       sx={{
@@ -97,7 +97,7 @@ const Sidebar = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={require('../../assets/logo.png')}
+                  src={require("../../assets/logo.png")}
                   style={{ cursor: "pointer" }}
                 />
               </Box>
@@ -118,6 +118,14 @@ const Sidebar = () => {
             <Item
               title="Dashboard"
               to="/"
+              icon={<HomeOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item  
+              title="Plant Disease detection"
+              to="/plantdisease"
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
