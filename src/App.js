@@ -31,7 +31,11 @@ function App() {
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
               <Route path="/" element={<Dashboard />} />
+<<<<<<< HEAD
               <Route path="/plantdisease" element={PlantDisease} />
+=======
+              <Route path="/disease" element={<Bar />} />
+>>>>>>> c91217c9922690d9e781f9c8cebf6ef0fac33cb9
               {/* <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
