@@ -2,9 +2,24 @@ import { Box, TextField, Button } from "@mui/material";
 import { useState } from "react";
 import Header from "../../components/Header";
 
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
+
 function randomIntFromInterval(min, max) { // min and max included 
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
+
+const style = {
+  p: 0,
+  width: '100%',
+  maxWidth: 360,
+  borderRadius: 2,
+  border: '1px solid',
+  borderColor: 'divider',
+  backgroundColor: 'background.paper',
+};
 
 
 const Calendar = () => {
@@ -67,15 +82,19 @@ const Calendar = () => {
   <Button variant="contained" color="primary" component="span" onClick={handleClick}>
         Upload
       </Button>
-  {result && showResult && <Box
-        component="span"
-        sx={{
-          height: 233,
-          width: 350,
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
-        }}
-      >{result}, с верояютностью {percent}%</Box>
+  {result && showResult && 
+  <>
+  <List sx={style} aria-label="mailbox folders">
+      <ListItem><ListItemText primary={`Результат: ${result}`} />
+  {/* <ListItemText primary={`Вероятность: $`} /> */}
+      
+      </ListItem>
+      <ListItem><ListItemText primary={`Уверенность: ${percent}%`} />
+  {/* <ListItemText primary={`Вероятность: $`} /> */}
+      
+      </ListItem>
+      <Divider component="li" />
+    </List></>
   }
   
   </Box>
