@@ -13,35 +13,12 @@ const Bar = () => {
     reader.readAsDataURL(filee);
     reader.onload = function () {
       // setFile({"file": reader.result, name: filee});
-      setFile("SADFKNFSNA")
+      setFile(reader.result)
     };
     
   }
 
   const handleClick = async () => {
-    if(!file){
-      alert("Please select a file");
-      return;
-    }
-    // http://127.0.0.1:8000/disease
-
-    const formData = new FormData();
-    formData.append("file", file);
-    console.log(formData)
-
-    try {
-      const response = await fetch("http://127.0.0.1:8000/disease", {
-        method: "POST",
-        body: JSON.stringify(formData)
-      
-      });
-      const data = await response.json();
-      setResult(data);
-      console.log(data);
-    } catch (error) {
-      console.error("Error uploading image:", error);
-    }
-
 
   }
 
