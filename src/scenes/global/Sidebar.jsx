@@ -95,7 +95,7 @@ const Sidebar = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={require('../../assets/logo.png')}
+                  src={require("../../assets/logo.png")}
                   style={{ cursor: "pointer" }}
                 />
               </Box>
@@ -131,6 +131,14 @@ const Sidebar = () => {
               title="Livestock"
               to="/livestock"
               icon={<PetsOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item  
+              title="Plant Disease detection"
+              to="/plantdisease"
+              icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
