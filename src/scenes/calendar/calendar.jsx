@@ -2,6 +2,21 @@ import { Box, TextField, Button } from "@mui/material";
 import { useState } from "react";
 import Header from "../../components/Header";
 
+
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+
+const style = {
+  p: 0,
+  width: '100%',
+  maxWidth: 360,
+  borderRadius: 2,
+  border: '1px solid',
+  borderColor: 'divider',
+  backgroundColor: 'background.paper',
+};
+
 const Calendar = () => {
 
   const [file, setFile] = useState();
@@ -68,7 +83,13 @@ const Calendar = () => {
           maxHeight: { xs: 233, md: 167 },
           maxWidth: { xs: 350, md: 250 },
         }}
-      >{result}</Box>
+      >
+        <List sx={style} aria-label="mailbox folders">
+      <ListItem>
+        <ListItemText primary={result} />
+      </ListItem>
+    </List>
+        </Box>
   }
   
   </Box>
