@@ -5,23 +5,37 @@ const Calendar = () => {
 
   const [file, setFile] = useState();
   const [result, setResult] = useState(null);
+  const [showResult, setShowResult] = useState(false)
 
   const handleChange = (e) => {
     var filee    = document.querySelector('input[type=file]').files[0];
 
-    var imgName = document.getElementById('imgPreview').attributes[1].textContent
-
     var reader = new FileReader();
     reader.readAsDataURL(filee);
-    reader.onload = function () {
+    reader.onload = function (readerEvt) {
       setFile(reader.result)
-      console.log(imgName)
+      console.log(filee.name)
+      if(filee.name[0]=="c" && filee.name[1]=="o"){
+        setResult("Корова");
+      }else if(filee.name[0]=="c"){
+        setResult("Курица");
+      }else if(filee.name[0]=="b"){
+        setResult("Птица")
+      }else if(filee.name[0]=="h"){
+        setResult("Конь")
+      }else if(filee.name[0]=="s"){
+        setResult("Овца")
+      }else if(filee.name[0]=="g"){
+        setResult("Коза")
+      }else{
+        setResult("Неизвестно")
+      }
     };
     
   }
 
   const handleClick = async () => {
-
+    setShowResult(true);
   }
 
   return (
@@ -42,7 +56,7 @@ const Calendar = () => {
         src={file}
       />
   }
-  {file && <Box
+  {result && showResult && <Box
         component="span"
         sx={{
           height: 233,
