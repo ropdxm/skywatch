@@ -1,130 +1,59 @@
+import { Box, TextField, Button } from "@mui/material";
 import { useState } from "react";
-import FullCalendar, { formatDate } from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction";
-import listPlugin from "@fullcalendar/list";
-import {
-  Box,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-  useTheme,
-} from "@mui/material";
-import Header from "../../components/Header";
-import { tokens } from "../../theme";
 
 const Calendar = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  const [currentEvents, setCurrentEvents] = useState([]);
 
-  const handleDateClick = (selected) => {
-    const title = prompt("Please enter a new title for your event");
-    const calendarApi = selected.view.calendar;
-    calendarApi.unselect();
+  const [file, setFile] = useState();
+  const [result, setResult] = useState(null);
 
-    if (title) {
-      calendarApi.addEvent({
-        id: `${selected.dateStr}-${title}`,
-        title,
-        start: selected.startStr,
-        end: selected.endStr,
-        allDay: selected.allDay,
-      });
-    }
-  };
+  const handleChange = (e) => {
+    var filee    = document.querySelector('input[type=file]').files[0];
 
-  const handleEventClick = (selected) => {
-    if (
-      window.confirm(
-        `Are you sure you want to delete the event '${selected.event.title}'`
-      )
-    ) {
-      selected.event.remove();
-    }
-  };
+    var imgName = document.getElementById('imgPreview').attributes[1].textContent
+
+    var reader = new FileReader();
+    reader.readAsDataURL(filee);
+    reader.onload = function () {
+      setFile(reader.result)
+      console.log(imgName)
+    };
+    
+  }
+
+  const handleClick = async () => {
+
+  }
 
   return (
-    <Box m="20px">
-      <Header title="Calendar" subtitle="Full Calendar Interactive Page" />
-
-      <Box display="flex" justifyContent="space-between">
-        {/* CALENDAR SIDEBAR */}
-        <Box
-          flex="1 1 20%"
-          backgroundColor={colors.primary[400]}
-          p="15px"
-          borderRadius="4px"
-        >
-          <Typography variant="h5">Events</Typography>
-          <List>
-            {currentEvents.map((event) => (
-              <ListItem
-                key={event.id}
-                sx={{
-                  backgroundColor: colors.greenAccent[500],
-                  margin: "10px 0",
-                  borderRadius: "2px",
-                }}
-              >
-                <ListItemText
-                  primary={event.title}
-                  secondary={
-                    <Typography>
-                      {formatDate(event.start, {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            ))}
-          </List>
-        </Box>
-
-        {/* CALENDAR */}
-        <Box flex="1 1 100%" ml="15px">
-          <FullCalendar
-            height="75vh"
-            plugins={[
-              dayGridPlugin,
-              timeGridPlugin,
-              interactionPlugin,
-              listPlugin,
-            ]}
-            headerToolbar={{
-              left: "prev,next today",
-              center: "title",
-              right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
-            }}
-            initialView="dayGridMonth"
-            editable={true}
-            selectable={true}
-            selectMirror={true}
-            dayMaxEvents={true}
-            select={handleDateClick}
-            eventClick={handleEventClick}
-            eventsSet={(events) => setCurrentEvents(events)}
-            initialEvents={[
-              {
-                id: "12315",
-                title: "All-day event",
-                date: "2022-09-14",
-              },
-              {
-                id: "5123",
-                title: "Timed event",
-                date: "2022-09-28",
-              },
-            ]}
-          />
-        </Box>
-      </Box>
-    </Box>
+    <Box m="20px" display="flex" flexDirection="column" gap="2rem">
+      <TextField type="file" onChange={handleChange} />
+      <Button variant="contained" color="primary" component="span" onClick={handleClick}>
+        Upload
+      </Button>
+      {file && <Box
+        component="img"
+        sx={{
+          height: 233,
+          width: 350,
+          maxHeight: { xs: 233, md: 167 },
+          maxWidth: { xs: 350, md: 250 },
+        }}
+        alt="ASNJDFBJASDBFBHJDJH"
+        src={file}
+      />
+  }
+  {file && <Box
+        component="span"
+        sx={{
+          height: 233,
+          width: 350,
+          maxHeight: { xs: 233, md: 167 },
+          maxWidth: { xs: 350, md: 250 },
+        }}
+      >{result}</Box>
+  }
+  
+  </Box>
   );
 };
 
