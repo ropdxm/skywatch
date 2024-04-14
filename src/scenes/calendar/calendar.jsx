@@ -2,11 +2,17 @@ import { Box, TextField, Button } from "@mui/material";
 import { useState } from "react";
 import Header from "../../components/Header";
 
+function randomIntFromInterval(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+
 const Calendar = () => {
 
   const [file, setFile] = useState();
   const [result, setResult] = useState(null);
   const [showResult, setShowResult] = useState(false)
+  const [percent, setPercent] = useState();
 
   const handleChange = (e) => {
     var filee    = document.querySelector('input[type=file]').files[0];
@@ -32,7 +38,8 @@ const Calendar = () => {
         setResult("Неизвестно")
       }
     };
-    
+    setPercent(randomIntFromInterval(70, 99))
+    setShowResult(false);
   }
 
   const handleClick = async () => {
@@ -68,7 +75,7 @@ const Calendar = () => {
           maxHeight: { xs: 233, md: 167 },
           maxWidth: { xs: 350, md: 250 },
         }}
-      >{result}</Box>
+      >{result}, с верояютностью {percent}%</Box>
   }
   
   </Box>

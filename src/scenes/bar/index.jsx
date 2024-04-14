@@ -83,6 +83,7 @@ const Bar = () => {
         <List sx={style} aria-label="mailbox folders">
       <ListItem style={detected ? {backgroundColor: "#92FF0E"} : {backgroundColor: "#FF6A4D"}}>
         <ListItemText primary={`Обнаружено заболевание: ${detected ? "Истина" : "Ложь"}`} />
+        <ListItemText primary={`Обнаружено заболевание: ${detected ? "Истина" : "Ложь"}`} />
       </ListItem>
       <Divider component="li" />
     </List>
