@@ -6,7 +6,7 @@ import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import GrassOutlinedIcon from "@mui/icons-material/GrassOutlined";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
+import PetsOutlinedIcon from "@mui/icons-material/PetsOutlined";
 import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
@@ -127,6 +127,15 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
+            <Item
+              title="Livestock"
+              to="/livestock"
+              icon={<PetsOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+
             {/* <Typography
               variant="h6"
               color={colors.grey[300]}
